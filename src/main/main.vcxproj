@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="blackbox\blackbox.h" />
+    <ClInclude Include="blackbox\blackbox_fielddefs.h" />
+    <ClInclude Include="blackbox\blackbox_io.h" />
+    <ClInclude Include="build\atomic.h" />
+    <ClInclude Include="build\build_config.h" />
+    <ClInclude Include="build\debug.h" />
+    <ClInclude Include="build\version.h" />
+    <ClInclude Include="common\axis.h" />
+    <ClInclude Include="common\color.h" />
+    <ClInclude Include="common\colorconversion.h" />
+    <ClInclude Include="common\crc.h" />
+    <ClInclude Include="common\encoding.h" />
+    <ClInclude Include="common\filter.h" />
+    <ClInclude Include="common\maths.h" />
+    <ClInclude Include="common\pilot.h" />
+    <ClInclude Include="common\printf.h" />
+    <ClInclude Include="common\streambuf.h" />
+    <ClInclude Include="common\time.h" />
+    <ClInclude Include="common\typeconversion.h" />
+    <ClInclude Include="common\utils.h" />
+    <ClInclude Include="config\config_eeprom.h" />
+    <ClInclude Include="config\config_reset.h" />
+    <ClInclude Include="config\config_streamer.h" />
+    <ClInclude Include="config\config_system.h" />
+    <ClInclude Include="config\config_unittest.h" />
+    <ClInclude Include="config\feature.h" />
+    <ClInclude Include="config\parameter_group.h" />
+    <ClInclude Include="config\parameter_group_ids.h" />
+    <ClInclude Include="config\profile.h" />
+    <ClInclude Include="drivers\accgyro.h" />
+    <ClInclude Include="drivers\accgyro_mpu.h" />
+    <ClInclude Include="drivers\accgyro_mpu6050.h" />
+    <ClInclude Include="drivers\adc.h" />
+    <ClInclude Include="drivers\adc_impl.h" />
+    <ClInclude Include="drivers\barometer.h" />
+    <ClInclude Include="drivers\barometer_ms5611.h" />
+    <ClInclude Include="drivers\buf_writer.h" />
+    <ClInclude Include="drivers\bus_i2c.h" />
+    <ClInclude Include="drivers\bus_spi.h" />
+    <ClInclude Include="drivers\compass.h" />
+    <ClInclude Include="drivers\compass_hmc5883l.h" />
+    <ClInclude Include="drivers\dma.h" />
+    <ClInclude Include="drivers\exti.h" />
+    <ClInclude Include="drivers\flash.h" />
+    <ClInclude Include="drivers\flash_m25p16.h" />
+    <ClInclude Include="drivers\gpio.h" />
+    <ClInclude Include="drivers\gyro_sync.h" />
+    <ClInclude Include="drivers\inverter.h" />
+    <ClInclude Include="drivers\io.h" />
+    <ClInclude Include="drivers\io_def.h" />
+    <ClInclude Include="drivers\io_def_generated.h" />
+    <ClInclude Include="drivers\io_impl.h" />
+    <ClInclude Include="drivers\light_led.h" />
+    <ClInclude Include="drivers\light_ws2811strip.h" />
+    <ClInclude Include="drivers\nvic.h" />
+    <ClInclude Include="drivers\pwm_mapping.h" />
+    <ClInclude Include="drivers\pwm_output.h" />
+    <ClInclude Include="drivers\pwm_rx.h" />
+    <ClInclude Include="drivers\rcc.h" />
+    <ClInclude Include="drivers\resource.h" />
+    <ClInclude Include="drivers\sdcard.h" />
+    <ClInclude Include="drivers\sdcard_standard.h" />
+    <ClInclude Include="drivers\sensor.h" />
+    <ClInclude Include="drivers\serial.h" />
+    <ClInclude Include="drivers\serial_softserial.h" />
+    <ClInclude Include="drivers\serial_uart.h" />
+    <ClInclude Include="drivers\serial_uart_impl.h" />
+    <ClInclude Include="drivers\serial_uart_stm32f30x.h" />
+    <ClInclude Include="drivers\serial_usb_vcp.h" />
+    <ClInclude Include="drivers\sound_beeper.h" />
+    <ClInclude Include="drivers\system.h" />
+    <ClInclude Include="drivers\timer.h" />
+    <ClInclude Include="drivers\timer_impl.h" />
+    <ClInclude Include="drivers\timer_stm32f30x.h" />
+    <ClInclude Include="drivers\transponder_ir.h" />
+    <ClInclude Include="drivers\usb_io.h" />
+    <ClInclude Include="drivers\video.h" />
+    <ClInclude Include="drivers\video_textscreen.h" />
+    <ClInclude Include="fc\cleanflight_fc.h" />
+    <ClInclude Include="fc\config.h" />
+    <ClInclude Include="fc\fc_debug.h" />
+    <ClInclude Include="fc\fc_serial.h" />
+    <ClInclude Include="fc\fc_tasks.h" />
+    <ClInclude Include="fc\msp_server_fc.h" />
+    <ClInclude Include="fc\rate_profile.h" />
+    <ClInclude Include="fc\rc_adjustments.h" />
+    <ClInclude Include="fc\rc_controls.h" />
+    <ClInclude Include="fc\rc_curves.h" />
+    <ClInclude Include="fc\runtime_config.h" />
+    <ClInclude Include="flight\altitudehold.h" />
+    <ClInclude Include="flight\failsafe.h" />
+    <ClInclude Include="flight\gps_conversion.h" />
+    <ClInclude Include="flight\gtune.h" />
+    <ClInclude Include="flight\imu.h" />
+    <ClInclude Include="flight\mixer.h" />
+    <ClInclude Include="flight\navigation.h" />
+    <ClInclude Include="flight\pid.h" />
+    <ClInclude Include="flight\servos.h" />
+    <ClInclude Include="io\asyncfatfs\asyncfatfs.h" />
+    <ClInclude Include="io\asyncfatfs\fat_standard.h" />
+    <ClInclude Include="io\beeper.h" />
+    <ClInclude Include="io\display.h" />
+    <ClInclude Include="io\flashfs.h" />
+    <ClInclude Include="io\gimbal.h" />
+    <ClInclude Include="io\gps.h" />
+    <ClInclude Include="io\ledstrip.h" />
+    <ClInclude Include="io\motors.h" />
+    <ClInclude Include="io\serial.h" />
+    <ClInclude Include="io\serial_4way.h" />
+    <ClInclude Include="io\serial_4way_avrootloader.h" />
+    <ClInclude Include="io\serial_4way_impl.h" />
+    <ClInclude Include="io\serial_4way_stk500v2.h" />
+    <ClInclude Include="io\serial_cli.h" />
+    <ClInclude Include="io\servos.h" />
+    <ClInclude Include="io\statusindicator.h" />
+    <ClInclude Include="io\transponder_ir.h" />
+    <ClInclude Include="msp\msp.h" />
+    <ClInclude Include="msp\msp_protocol.h" />
+    <ClInclude Include="msp\msp_serial.h" />
+    <ClInclude Include="msp\msp_server.h" />
+    <ClInclude Include="osd\cleanflight_osd.h" />
+    <ClInclude Include="osd\config.h" />
+    <ClInclude Include="osd\fc_state.h" />
+    <ClInclude Include="osd\fonts\font.h" />
+    <ClInclude Include="osd\fonts\font_max7456_12x18.h" />
+    <ClInclude Include="osd\msp_client_osd.h" />
+    <ClInclude Include="osd\msp_server_osd.h" />
+    <ClInclude Include="osd\osd.h" />
+    <ClInclude Include="osd\osd_element.h" />
+    <ClInclude Include="osd\osd_element_render.h" />
+    <ClInclude Include="osd\osd_screen.h" />
+    <ClInclude Include="osd\osd_serial.h" />
+    <ClInclude Include="osd\osd_tasks.h" />
+    <ClInclude Include="platform.h" />
+    <ClInclude Include="rx\ibus.h" />
+    <ClInclude Include="rx\msp.h" />
+    <ClInclude Include="rx\pwm.h" />
+    <ClInclude Include="rx\rx.h" />
+    <ClInclude Include="rx\sbus.h" />
+    <ClInclude Include="rx\spektrum.h" />
+    <ClInclude Include="rx\srxl.h" />
+    <ClInclude Include="rx\sumd.h" />
+    <ClInclude Include="rx\sumh.h" />
+    <ClInclude Include="rx\xbus.h" />
+    <ClInclude Include="scheduler\scheduler.h" />
+    <ClInclude Include="sensors\acceleration.h" />
+    <ClInclude Include="sensors\amperage.h" />
+    <ClInclude Include="sensors\barometer.h" />
+    <ClInclude Include="sensors\battery.h" />
+    <ClInclude Include="sensors\boardalignment.h" />
+    <ClInclude Include="sensors\compass.h" />
+    <ClInclude Include="sensors\gyro.h" />
+    <ClInclude Include="sensors\initialisation.h" />
+    <ClInclude Include="sensors\sensors.h" />
+    <ClInclude Include="sensors\sonar.h" />
+    <ClInclude Include="sensors\voltage.h" />
+    <ClInclude Include="target\SPRACINGF3\target.h" />
+    <ClInclude Include="target\system_stm32f30x.h" />
+    <ClInclude Include="telemetry\frsky.h" />
+    <ClInclude Include="telemetry\hott.h" />
+    <ClInclude Include="telemetry\ibus.h" />
+    <ClInclude Include="telemetry\ltm.h" />
+    <ClInclude Include="telemetry\mavlink.h" />
+    <ClInclude Include="telemetry\smartport.h" />
+    <ClInclude Include="telemetry\telemetry.h" />
+    <ClInclude Include="vcp\hw_config.h" />
+    <ClInclude Include="vcp\platform_config.h" />
+    <ClInclude Include="vcp\stm32_it.h" />
+    <ClInclude Include="vcp\usb_conf.h" />
+    <ClInclude Include="vcp\usb_desc.h" />
+    <ClInclude Include="vcp\usb_istr.h" />
+    <ClInclude Include="vcp\usb_prop.h" />
+    <ClInclude Include="vcp\usb_pwr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="blackbox\blackbox.c" />
+    <ClCompile Include="blackbox\blackbox_io.c" />
+    <ClCompile Include="build\build_config.c" />
+    <ClCompile Include="build\debug.c" />
+    <ClCompile Include="build\version.c" />
+    <ClCompile Include="common\colorconversion.c" />
+    <ClCompile Include="common\crc.c" />
+    <ClCompile Include="common\encoding.c" />
+    <ClCompile Include="common\filter.c" />
+    <ClCompile Include="common\maths.c" />
+    <ClCompile Include="common\pilot.c" />
+    <ClCompile Include="common\printf.c" />
+    <ClCompile Include="common\streambuf.c" />
+    <ClCompile Include="common\typeconversion.c" />
+    <ClCompile Include="config\config_eeprom.c" />
+    <ClCompile Include="config\config_streamer.c" />
+    <ClCompile Include="config\feature.c" />
+    <ClCompile Include="config\parameter_group.c" />
+    <ClCompile Include="config\profile.c" />
+    <ClCompile Include="drivers\accgyro_mpu.c" />
+    <ClCompile Include="drivers\accgyro_mpu6050.c" />
+    <ClCompile Include="drivers\adc.c" />
+    <ClCompile Include="drivers\adc_stm32f30x.c" />
+    <ClCompile Include="drivers\barometer_ms5611.c" />
+    <ClCompile Include="drivers\buf_writer.c" />
+    <ClCompile Include="drivers\bus_i2c_soft.c" />
+    <ClCompile Include="drivers\bus_i2c_stm32f30x.c" />
+    <ClCompile Include="drivers\bus_spi.c" />
+    <ClCompile Include="drivers\compass_hmc5883l.c" />
+    <ClCompile Include="drivers\dma.c" />
+    <ClCompile Include="drivers\exti.c" />
+    <ClCompile Include="drivers\flash_m25p16.c" />
+    <ClCompile Include="drivers\gpio_stm32f30x.c" />
+    <ClCompile Include="drivers\gyro_sync.c" />
+    <ClCompile Include="drivers\inverter.c" />
+    <ClCompile Include="drivers\io.c" />
+    <ClCompile Include="drivers\light_led_stm32f30x.c" />
+    <ClCompile Include="drivers\light_ws2811strip.c" />
+    <ClCompile Include="drivers\light_ws2811strip_stm32f30x.c" />
+    <ClCompile Include="drivers\pwm_mapping.c" />
+    <ClCompile Include="drivers\pwm_output.c" />
+    <ClCompile Include="drivers\pwm_rx.c" />
+    <ClCompile Include="drivers\rcc.c" />
+    <ClCompile Include="drivers\sdcard.c" />
+    <ClCompile Include="drivers\sdcard_standard.c" />
+    <ClCompile Include="drivers\serial.c" />
+    <ClCompile Include="drivers\serial_softserial.c" />
+    <ClCompile Include="drivers\serial_uart.c" />
+    <ClCompile Include="drivers\serial_uart_stm32f30x.c" />
+    <ClCompile Include="drivers\serial_usb_vcp.c" />
+    <ClCompile Include="drivers\sound_beeper.c" />
+    <ClCompile Include="drivers\sound_beeper_stm32f30x.c" />
+    <ClCompile Include="drivers\system.c" />
+    <ClCompile Include="drivers\system_stm32f30x.c" />
+    <ClCompile Include="drivers\timer.c" />
+    <ClCompile Include="drivers\timer_stm32f30x.c" />
+    <ClCompile Include="drivers\transponder_ir.c" />
+    <ClCompile Include="drivers\transponder_ir_stm32f30x.c" />
+    <ClCompile Include="drivers\usb_io.c" />
+    <ClCompile Include="fc\boot.c" />
+    <ClCompile Include="fc\cleanflight_fc.c" />
+    <ClCompile Include="fc\config.c" />
+    <ClCompile Include="fc\fc_debug.c" />
+    <ClCompile Include="fc\fc_serial.c" />
+    <ClCompile Include="fc\fc_tasks.c" />
+    <ClCompile Include="fc\msp_server_fc.c" />
+    <ClCompile Include="fc\rate_profile.c" />
+    <ClCompile Include="fc\rc_adjustments.c" />
+    <ClCompile Include="fc\rc_controls.c" />
+    <ClCompile Include="fc\rc_curves.c" />
+    <ClCompile Include="fc\runtime_config.c" />
+    <ClCompile Include="flight\altitudehold.c" />
+    <ClCompile Include="flight\failsafe.c" />
+    <ClCompile Include="flight\gps_conversion.c" />
+    <ClCompile Include="flight\gtune.c" />
+    <ClCompile Include="flight\imu.c" />
+    <ClCompile Include="flight\mixer.c" />
+    <ClCompile Include="flight\navigation.c" />
+    <ClCompile Include="flight\pid.c" />
+    <ClCompile Include="flight\pid_luxfloat.c" />
+    <ClCompile Include="flight\pid_mw23.c" />
+    <ClCompile Include="flight\pid_mwrewrite.c" />
+    <ClCompile Include="flight\servos.c" />
+    <ClCompile Include="io\asyncfatfs\asyncfatfs.c" />
+    <ClCompile Include="io\asyncfatfs\fat_standard.c" />
+    <ClCompile Include="io\beeper.c" />
+    <ClCompile Include="io\display.c" />
+    <ClCompile Include="io\flashfs.c" />
+    <ClCompile Include="io\gimbal.c" />
+    <ClCompile Include="io\gps.c" />
+    <ClCompile Include="io\ledstrip.c" />
+    <ClCompile Include="io\motors.c" />
+    <ClCompile Include="io\serial.c" />
+    <ClCompile Include="io\serial_4way.c" />
+    <ClCompile Include="io\serial_4way_avrootloader.c" />
+    <ClCompile Include="io\serial_4way_stk500v2.c" />
+    <ClCompile Include="io\serial_cli.c" />
+    <ClCompile Include="io\servos.c" />
+    <ClCompile Include="io\statusindicator.c" />
+    <ClCompile Include="io\transponder_ir.c" />
+    <ClCompile Include="msp\msp.c" />
+    <ClCompile Include="msp\msp_serial.c" />
+    <ClCompile Include="msp\msp_server.c" />
+    <ClCompile Include="osd\boot.c" />
+    <ClCompile Include="osd\cleanflight_osd.c" />
+    <ClCompile Include="osd\config.c" />
+    <ClCompile Include="osd\fc_state.c" />
+    <ClCompile Include="osd\fonts\font_max7456_12x18.c" />
+    <ClCompile Include="osd\msp_client_osd.c" />
+    <ClCompile Include="osd\msp_server_osd.c" />
+    <ClCompile Include="osd\osd.c" />
+    <ClCompile Include="osd\osd_element.c" />
+    <ClCompile Include="osd\osd_element_render.c" />
+    <ClCompile Include="osd\osd_max7456.c" />
+    <ClCompile Include="osd\osd_screen.c" />
+    <ClCompile Include="osd\osd_serial.c" />
+    <ClCompile Include="osd\osd_tasks.c" />
+    <ClCompile Include="rx\ibus.c" />
+    <ClCompile Include="rx\msp.c" />
+    <ClCompile Include="rx\pwm.c" />
+    <ClCompile Include="rx\rx.c" />
+    <ClCompile Include="rx\sbus.c" />
+    <ClCompile Include="rx\spektrum.c" />
+    <ClCompile Include="rx\srxl.c" />
+    <ClCompile Include="rx\sumd.c" />
+    <ClCompile Include="rx\sumh.c" />
+    <ClCompile Include="rx\xbus.c" />
+    <ClCompile Include="scheduler\scheduler.c" />
+    <ClCompile Include="sensors\acceleration.c" />
+    <ClCompile Include="sensors\amperage.c" />
+    <ClCompile Include="sensors\barometer.c" />
+    <ClCompile Include="sensors\battery.c" />
+    <ClCompile Include="sensors\boardalignment.c" />
+    <ClCompile Include="sensors\compass.c" />
+    <ClCompile Include="sensors\gyro.c" />
+    <ClCompile Include="sensors\initialisation.c" />
+    <ClCompile Include="sensors\sensors.c" />
+    <ClCompile Include="sensors\sonar.c" />
+    <ClCompile Include="sensors\voltage.c" />
+    <ClCompile Include="target\system_stm32f30x.c" />
+    <ClCompile Include="telemetry\frsky.c" />
+    <ClCompile Include="telemetry\hott.c" />
+    <ClCompile Include="telemetry\ibus.c" />
+    <ClCompile Include="telemetry\ltm.c" />
+    <ClCompile Include="telemetry\mavlink.c" />
+    <ClCompile Include="telemetry\smartport.c" />
+    <ClCompile Include="telemetry\telemetry.c" />
+    <ClCompile Include="vcp\hw_config.c" />
+    <ClCompile Include="vcp\stm32_it.c" />
+    <ClCompile Include="vcp\usb_desc.c" />
+    <ClCompile Include="vcp\usb_endp.c" />
+    <ClCompile Include="vcp\usb_istr.c" />
+    <ClCompile Include="vcp\usb_prop.c" />
+    <ClCompile Include="vcp\usb_pwr.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C86CBE7B-0EDB-41B5-BC38-E6BB88E21DDB}</ProjectGuid>
+    <RootNamespace>GEOSTMCF</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\dev\project\GEOSTMCF\src\main\target\SPRACINGF3;$(ProjectDir);$(IncludePath)</IncludePath>
+    <ReferencePath>C:\dev\project\GEOSTMCF\lib\main\STM32_USB-FS-Device_Driver\inc;$(ReferencePath)</ReferencePath>
+    <SourcePath>$(ProjectDir);$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
