@@ -37,11 +37,11 @@
 
 #include "sensor.h"
 #include "accgyro.h"
-#include "accgyro_mpu3050.h"
+//#include "accgyro_mpu3050.h"
 #include "accgyro_mpu6050.h"
-#include "accgyro_mpu6500.h"
-#include "accgyro_spi_mpu6000.h"
-#include "accgyro_spi_mpu6500.h"
+//#include "accgyro_mpu6500.h"
+//#include "accgyro_spi_mpu6000.h"
+//#include "accgyro_spi_mpu6500.h"
 #include "accgyro_mpu.h"
 
 //#define DEBUG_MPU_DATA_READY_INTERRUPT
@@ -96,13 +96,13 @@ mpuDetectionResult_t *detectMpu(const extiConfig_t *configToUse)
     mpuConfiguration.gyroReadXRegister = MPU_RA_GYRO_XOUT_H;
 
     // If an MPU3050 is connected sig will contain 0.
-    ack = mpuReadRegisterI2C(MPU_RA_WHO_AM_I_LEGACY, 1, &inquiryResult);
-    inquiryResult &= MPU_INQUIRY_MASK;
-    if (ack && inquiryResult == MPUx0x0_WHO_AM_I_CONST) {
-        mpuDetectionResult.sensor = MPU_3050;
-        mpuConfiguration.gyroReadXRegister = MPU3050_GYRO_OUT;
-        return &mpuDetectionResult;
-    }
+    //ack = mpuReadRegisterI2C(MPU_RA_WHO_AM_I_LEGACY, 1, &inquiryResult);
+    //inquiryResult &= MPU_INQUIRY_MASK;
+    //if (ack && inquiryResult == MPUx0x0_WHO_AM_I_CONST) {
+    //    mpuDetectionResult.sensor = MPU_3050;
+    //    mpuConfiguration.gyroReadXRegister = MPU3050_GYRO_OUT;
+    //    return &mpuDetectionResult;
+    //}
 
     sig &= MPU_INQUIRY_MASK;
 
@@ -121,25 +121,25 @@ mpuDetectionResult_t *detectMpu(const extiConfig_t *configToUse)
 #ifdef USE_SPI
 static bool detectSPISensorsAndUpdateDetectionResult(void)
 {
-#ifdef USE_GYRO_SPI_MPU6500
-    if (mpu6500SpiDetect()) {
-        mpuDetectionResult.sensor = MPU_65xx_SPI;
-        mpuConfiguration.gyroReadXRegister = MPU_RA_GYRO_XOUT_H;
-        mpuConfiguration.read = mpu6500ReadRegister;
-        mpuConfiguration.write = mpu6500WriteRegister;
-        return true;
-    }
-#endif
-
-#ifdef USE_GYRO_SPI_MPU6000
-    if (mpu6000SpiDetect()) {
-        mpuDetectionResult.sensor = MPU_60x0_SPI;
-        mpuConfiguration.gyroReadXRegister = MPU_RA_GYRO_XOUT_H;
-        mpuConfiguration.read = mpu6000ReadRegister;
-        mpuConfiguration.write = mpu6000WriteRegister;
-        return true;
-    }
-#endif
+//#ifdef USE_GYRO_SPI_MPU6500
+//    if (mpu6500SpiDetect()) {
+//        mpuDetectionResult.sensor = MPU_65xx_SPI;
+//        mpuConfiguration.gyroReadXRegister = MPU_RA_GYRO_XOUT_H;
+//        mpuConfiguration.read = mpu6500ReadRegister;
+//        mpuConfiguration.write = mpu6500WriteRegister;
+//        return true;
+//    }
+//#endif
+//
+//#ifdef USE_GYRO_SPI_MPU6000
+//    if (mpu6000SpiDetect()) {
+//        mpuDetectionResult.sensor = MPU_60x0_SPI;
+//        mpuConfiguration.gyroReadXRegister = MPU_RA_GYRO_XOUT_H;
+//        mpuConfiguration.read = mpu6000ReadRegister;
+//        mpuConfiguration.write = mpu6000WriteRegister;
+//        return true;
+//    }
+//#endif
 
     return false;
 }
