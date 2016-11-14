@@ -25,10 +25,11 @@
 #define SERIAL_RX
 #define USE_CLI
 
-#if (FLASH_SIZE <= 64)
-#define SKIP_TASK_STATISTICS
-#define SKIP_CLI_COMMAND_HELP
-#else
+//F3 FLASH_SIZE == 256
+//#if (FLASH_SIZE <= 64)
+//#define SKIP_TASK_STATISTICS
+//#define SKIP_CLI_COMMAND_HELP
+//#else
 #define BOOTLOG
 #define BLACKBOX
 #define GPS
@@ -42,9 +43,9 @@
 #define TELEMETRY_HOTT
 #define TELEMETRY_SMARTPORT
 #define TELEMETRY_LTM
-#endif
-
-#if (FLASH_SIZE > 128)
+//#endif
+//
+//#if (FLASH_SIZE > 128)
 #define DISPLAY
 #define DISPLAY_ARMED_BITMAP
 #define TELEMETRY_MAVLINK
@@ -52,8 +53,8 @@
 #define TELEMETRY_IBUS
 #define USE_PMW_SERVO_DRIVER
 #define PWM_DRIVER_PCA9685
-#else
-#define SKIP_CLI_COMMAND_HELP
-#define SKIP_RX_MSP
-#define DISABLE_UNCOMMON_MIXERS
-#endif
+//#else
+//#define SKIP_CLI_COMMAND_HELP
+//#define SKIP_RX_MSP
+//#define DISABLE_UNCOMMON_MIXERS
+//#endif
