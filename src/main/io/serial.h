@@ -39,6 +39,7 @@ typedef enum {
 
 typedef enum {
     BAUD_AUTO = 0,
+	BAUD_4800,
     BAUD_9600,
     BAUD_19200,
     BAUD_38400,
@@ -46,7 +47,6 @@ typedef enum {
     BAUD_115200,
     BAUD_230400,
     BAUD_250000,
-	BAUD_4800,
 } baudRate_e;
 
 extern const uint32_t baudRates[];
